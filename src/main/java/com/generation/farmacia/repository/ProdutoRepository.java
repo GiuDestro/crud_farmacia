@@ -13,7 +13,7 @@ public interface ProdutoRepository extends JpaRepository<Produto, Long>{
 	public List<Produto> findAllByNomeContainingIgnoreCase(@Param("nome") String nome);
 	
 	
-	@Query(value = "select * from tb_produto where valor between :inicio and :fim", nativeQuery = true)
+	@Query(value = "select * from tb_produto where preco between :inicio and :fim", nativeQuery = true)
     public List <Produto> buscarProdutosEntre(@Param("inicio") float inicio, @Param("fim") float fim);
 	
 
